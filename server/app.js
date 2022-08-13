@@ -6,7 +6,7 @@ const app = express()
 //env doszasinin ayarlamak icin kullaniyoruy
 const dotenv = require('dotenv')
 //sonra config yapamamis gerekiyor
-dotenv.config( { path:'./server/.env'})
+dotenv.config( { path:'./.env'})
 //.env ulastigimiy gormek icin
 //console.log(process.env)
 
@@ -26,7 +26,8 @@ app.use(express.json())
 
 
 
-
+//database baglanmak icin 
+require('./db/db')
 
 
 
