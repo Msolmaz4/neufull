@@ -1,7 +1,7 @@
-const momgoose = require('mongoose')
+const mongoose = require('mongoose')
 
 // sonra schemayi olusruruyoruy
-const productSchema = new momgoose.Schema({
+const productSchema = new mongoose.Schema({
     title:{
         type:String,
         required:true
@@ -15,7 +15,7 @@ const productSchema = new momgoose.Schema({
         required:true,
         min:0
     },
-    nun_favori:{
+    num_favorers:{
         type:Number,
         min:0,
         default:0
@@ -24,11 +24,11 @@ const productSchema = new momgoose.Schema({
         type:[String],
         default:[]
     },
-    processin_min:{
+    processing_min:{
         type:Number,
         min:0
     },
-    processin_max:{
+    processing_max:{
         type:Number,
         min:0
     },
@@ -41,26 +41,24 @@ const productSchema = new momgoose.Schema({
         type:String,
         default:''
     },
+    onSale:{
+        type:Boolean,
+        default:true,
+        required:true
+    },
     taxonomy_id:{
         type:Number,
         required:true,
         enum:[1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
     },
-    //satida gibi
-    onSale:{
-        type:Boolean,
-        default:true,
-        required:true
-
-    },
-    //sepete atilan
     inCard:{
         type:Number,
         min:0,
         default:0
     }
+   
 })
 
 // 'Product' buyuk harfke yadiki ama bu kenfdini kucuk harfe cevirir
-const Products = momgoose.Schema('Product',productSchema)
+const Products = mongoose.model('Product',productSchema)
 module.exports = Products

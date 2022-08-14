@@ -3,6 +3,10 @@
 const express = require('express')
 const app = express()
 
+ 
+const productRouter =require('./routes/productRouter.js')
+
+
 //env doszasinin ayarlamak icin kullaniyoruy
 const dotenv = require('dotenv')
 //sonra config yapamamis gerekiyor
@@ -28,6 +32,17 @@ app.use(express.json())
 
 //database baglanmak icin 
 require('./db/db')
+
+
+//app use /product olanlariproduct roter yonlendir
+app.use('/products',productRouter)
+
+
+
+
+
+
+
 
 
 
