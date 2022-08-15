@@ -5,12 +5,13 @@ const app = express()
 
  
 const productRouter =require('./routes/productRouter.js')
+const userRouter = require('./routes/userRouter')
 
 
 //env doszasinin ayarlamak icin kullaniyoruy
 const dotenv = require('dotenv')
 //sonra config yapamamis gerekiyor
-dotenv.config( { path:'./.env'})
+dotenv.config( { path:'.env'})
 //.env ulastigimiy gormek icin
 //console.log(process.env)
 
@@ -36,6 +37,7 @@ require('./db/db')
 
 //app use /product olanlariproduct roter yonlendir
 app.use('/products',productRouter)
+app.use('/user',userRouter)
 
 
 
