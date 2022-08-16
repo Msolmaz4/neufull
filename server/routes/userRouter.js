@@ -1,7 +1,13 @@
 const router = require('express').Router()
 const registerController = require('../controllers/userController/registerController')
 const loginController = require('../controllers/userController/loginController')
+//bunu login olunc akontrol olarak yazdik
 const isLogin =require('../midelwars/isLogin')
+
+const addFavController = require('../controllers/userController/addFavController')
+const deleteFav = require('../controllers/userController/deleteFav')
+const checkAuth = require('../controllers/userController/checkAuth')
+
 
 
 
@@ -16,6 +22,9 @@ const isLogin =require('../midelwars/isLogin')
 
 router.post('/register',registerController)
 router.post('/login',loginController)
+router.post('/fav/:id',addFavController,isLogin)
+router.delete('/fav/:id',deleteFav,isLogin)
+router.get('/checkAuth',checkAuth)
 
 
 
