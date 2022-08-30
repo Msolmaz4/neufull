@@ -19,7 +19,7 @@ const registerController = async (req,res)=>{
         const newUser = await new Users({
             name:name,
             surname:surname,
-            email,email,
+            email:email,
             password: bcrypt.hashSync(password,8)
         })
         newUser.save()

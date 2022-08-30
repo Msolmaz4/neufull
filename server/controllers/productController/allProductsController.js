@@ -26,11 +26,14 @@ try {
 
 
 //finda objeyi yerlestirilri
-   const deme = await Products.find({query}).limit(20).skip((page-1)*20)
+
+
  //denemede bozle yaapriy
 //res.send(deme)
 
- res.stataus(200).json({
+ const deme = await Products.find().limit(20).skip((page-1)*20)
+
+ res.status(200).json({
    mesasge:'succes',
    data:deme
  })

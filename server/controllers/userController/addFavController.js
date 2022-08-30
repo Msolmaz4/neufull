@@ -5,8 +5,9 @@ const Users = require('../../models/userModels')
 
 const addFavController = async (req,res)=>{
     try {
-        
+        //buradaki id product 
         const {id}= req.params
+        //token headergelr burasi onemli
         const {token} = req.headers
         const user = jwt_decode(token)
         //kontrol amacli 
