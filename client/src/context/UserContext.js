@@ -1,17 +1,19 @@
 // burda once temel yaoyi kurariy
 //1
 import { createContext, useEffect, useState } from "react";
-
+//1
+export const UserContext = createContext()
 
 //1
-export const UseProvider = ({children})=>{
+export const UserProvider = ({children})=>{
  // 4 burda genel yapiyi kurmus oluruy
  //burada kendimiz kontrol edecegiy basta manuel
- const [ isAuthenticated,setIsAuthenticated] = useState(false)
+ //buradan privar router gideriz ve isAuth cekeriz
+ const [ isAuthenticated,setIsAuthenticated] = useState(true)
 
     //2 bunu temel olarka yaz sonra useeffrct kur tokenui cagir
     //tokenle gonderirirz cunku backende kontrol yapmak icin
-    const checkAuth = ()=>{
+    const checkAuth = (token)=>{
 
 
     }
@@ -28,8 +30,8 @@ export const UseProvider = ({children})=>{
 
 //1
     return(
-        <UserContext.Provide>
+        <UserContext.Provider value={{ isAuthenticated }}>
             {children}
-        </UserContext.Provide>
+        </UserContext.Provider>
     )
 }

@@ -36,7 +36,41 @@
     transform: rotate(360deg);
   }
 }
-form{
+
+.register{
+  height: 100vh;
+  width: 100%;
   display: flex;
-  
+  justify-content: center;
+  border: 1px solid red;
+  align-items: center;
+
+}
+.sol{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  border: 2px red solid;
+}
+
+.sag{
+  height: 100%;
+  width: 50%;
+  display: flex;
+  border: 2px black solid;
+
+}
+.formm{
+  padding-top: 120px;
+  margin-left: 20px;
+}
+button{
+
+  margin-left: 5px;
+  background-color: blue;
+  color: aliceblue;
+}
+.ddd{
+display: flex;
+justify-content: center;
 }

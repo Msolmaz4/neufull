@@ -14,6 +14,8 @@ import Profile from "./pages/Profile";
 import Cart from "./pages/Cart";
 import Privat from "./routes/Privat";
 import Public from "./routes/Public";
+import { UserProvider } from "./context/UserContext";
+
 
 
 //sistemi kurraken once plan yaptim
@@ -30,6 +32,8 @@ import Public from "./routes/Public";
 
 function App() {
   return (
+
+    <UserProvider>
     <Router>
     
      
@@ -51,7 +55,7 @@ function App() {
    </Route>
    </Routes>
     </Router>
-    
+    </UserProvider>
   );
 }
 
