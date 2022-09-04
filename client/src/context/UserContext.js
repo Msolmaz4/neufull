@@ -60,9 +60,22 @@ const navi = useNavigate()
 
       }
 
+
+//6 login
+
+const login =(e,user)=>{
+  e.preventDefault()
+  axios.post('http://localhost:8006/user/login',user)
+  .then(res=>{
+    console.log('response',res)
+  })
+}
+
+
+
 //1
     return(
-        <UserContext.Provider value={{ isAuthenticated ,register}}>
+        <UserContext.Provider value={{ isAuthenticated ,register,login}}>
             {children}
         </UserContext.Provider>
     )
