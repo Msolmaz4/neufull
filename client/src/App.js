@@ -33,9 +33,9 @@ import { UserProvider } from "./context/UserContext";
 function App() {
   return (
 
-    <UserProvider>
+  
     <Router>
-    
+      <UserProvider>
      
    <Routes>
 
@@ -54,8 +54,9 @@ function App() {
    <Route path='/cart' element={<Cart/>}/>
    </Route>
    </Routes>
+   </UserProvider>
     </Router>
-    </UserProvider>
+   
   );
 }
 

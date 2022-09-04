@@ -72,12 +72,12 @@ const Registerr = () => {
               <div>
                 <label htmlFor="">email</label>
                 <br />
-                <input type="text" name="email" onChange={handle} />
+                <input type="email" name="email" onChange={handle} />
               </div>
               <div>
                 <label htmlFor="">Password</label>
                 <br />
-                <input type="text" name="password" onChange={handle} />
+                <input type="password" name="password" onChange={handle} />
                 <br />
                 <br />
               </div>

@@ -1,10 +1,13 @@
 // burda once temel yaoyi kurariy
 //1
 import { createContext, useEffect, useState } from "react";
+//5
+import {useNavigate} from 'react-router-dom'
 
 import axios from 'axios'
 //1
 export const UserContext = createContext()
+ 
 
 
 
@@ -24,7 +27,7 @@ export const UserProvider = ({children})=>{
     }
 
 
-
+const navi = useNavigate()
 
 
   //3  token && checkAuth(token) flase gleirse kontrol yapilmaz
@@ -45,6 +48,15 @@ export const UserProvider = ({children})=>{
         console.log('register',user)
         e.preventDefault()
         axios.post('http://localhost:8006/user/register',user)
+      //respons da gonderip komntrol ederiz
+        .then(res=>{
+          console.log('response',res)
+          navi('/')
+        })
+        .catch(err=>{
+          console.log('error',err)
+          alert('register front')
+        })
 
       }
 
