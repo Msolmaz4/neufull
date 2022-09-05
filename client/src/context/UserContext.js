@@ -28,6 +28,10 @@ export const UserProvider = ({children})=>{
 
 
 const navi = useNavigate()
+//7
+
+const [users,setUsers] = useState()
+const [favs,setFavs] = useState([])
 
 
   //3  token && checkAuth(token) flase gleirse kontrol yapilmaz
@@ -68,6 +72,14 @@ const login =(e,user)=>{
   axios.post('http://localhost:8006/user/login',user)
   .then(res=>{
     console.log('response',res)
+    //isAuth burada truaza ceyirebiliry token vare cunku 
+    //datadan  goruyoruy ne gonderildigini bunlarui burada turtmak icin usrver favs const acalim
+    setIsAuthenticated(true)
+    setUsers(res.data)
+    setFavs(res.data.favs)
+    //tokeni gomerim
+    localStorage.setItem('token',res.data.token)
+    navi('/')
   })
 }
 
@@ -75,7 +87,7 @@ const login =(e,user)=>{
 
 //1
     return(
-        <UserContext.Provider value={{ isAuthenticated ,register,login}}>
+        <UserContext.Provider value={{ isAuthenticated ,register,login,users,favs}}>
             {children}
         </UserContext.Provider>
     )

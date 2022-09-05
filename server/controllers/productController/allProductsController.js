@@ -31,7 +31,7 @@ try {
  //denemede bozle yaapriy
 //res.send(deme)
 
- const deme = await Products.find().limit(20).skip((page-1)*20)
+ const deme = await Products.find(query).limit(20).skip((page-1)*20)
 
  res.status(200).json({
    mesasge:'succes',
