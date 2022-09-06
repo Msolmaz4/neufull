@@ -74,3 +74,38 @@ button{
 display: flex;
 justify-content: center;
 }
+.search{
+  display: flex;
+  justify-content: center;
+  height: 39px;
+  padding-top: 9px;
+  padding-left: 500px;
+}
+.log{
+  display: flex;
+  text-align: end;
+  justify-content:end;
+  padding-left: 400px;
+  text-decoration: none;
+  
+
+}
+.header{
+  display: flex;
+  border: solid 2px red;
+  height: 70px;
+  width: 100%;
+
+
+}
+.grid{
+ 
+  display: grid;
+  grid-template-rows: 100vh 5fr;
+  grid-template-columns: 300px 1110px;
+}
+.num{
+  display: flex;
+  
+
+}

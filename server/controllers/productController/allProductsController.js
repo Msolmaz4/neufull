@@ -10,7 +10,7 @@ try {
    // azrica page gondeririy sazga gexciclerini ayarlamak  icin limittten sonra skip 
    //komutu ile zapili page-1 carp limit
    //filteleme zapmak icin 
-   const { keyword , taxonomy_id,min_price,max_price} = req.body
+   const { keyword , taxonomy_id,min_price,max_price,page} = req.body
    //gelip gelmedigini g;rmek icin once bir debneme
    //console.log(keyword)
    //burada bizim bir find ta filtre zapacaksacak obje olmali
@@ -32,15 +32,19 @@ try {
 //res.send(deme)
 
  const deme = await Products.find(query).limit(20).skip((page-1)*20)
-
+/*
+const deme = await Products.find() basta boyle dene tamami gor gelip glmedifigni
+console.log(deme.length)
+ res.send(deme.length)
+*/
  res.status(200).json({
-   mesasge:'succes',
+   message:'succes',
    data:deme
  })
 
    
 } catch (err) {
- res.send(err.mesasge)
+ res.send(err.message)
    
 }
 
