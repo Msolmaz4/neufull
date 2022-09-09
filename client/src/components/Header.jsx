@@ -1,13 +1,19 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
 
-const Header = () => {
+const Header = ({payload,getProducts}) => {
+  
+const handle =(e)=>{
+  const name =e.target.name
+  payload[name] = e.target.value
+}
+
   return (
     <div className='header'>
 
   <div className='search'>
-    <input type="search" />
-    <button>Search</button>
+    <input type="search"  name='keyword' onChange={handle} />
+    <button onClick={getProducts}>Search</button>
 
   </div>
   <div className='log'>

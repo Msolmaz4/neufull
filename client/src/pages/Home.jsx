@@ -16,7 +16,9 @@ const Home = () => {
     taxonomy_id: "",
   });
 
-  const getProducts = () => { 
+  const getProducts = (e) => { 
+
+   if(e) e.preventDefault()
     //bunu karsiya gonderrirri azrica filter gondeririy altta
     const payload = {
       keyword: inputRef.current.keyword,
@@ -50,7 +52,10 @@ const Home = () => {
   return (
     <div>
       <div>
-      <Header />
+      <Header
+      payload={inputRef.current}
+      getProducts={getProducts}
+      />
       <div>
       <div className="grid">
         <Filter 
