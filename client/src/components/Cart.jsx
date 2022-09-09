@@ -16,8 +16,8 @@ const Cart = ({data,page}) => {
         <Card.Text>
         {data.description}
         </Card.Text>
-        <Card.Link href="#">Card Link</Card.Link>
-        <Card.Link href="#">Another Link</Card.Link>
+        <Card.Link>Buy</Card.Link>
+        <Card.Text>{data.price}$</Card.Text>
       </Card.Body>
     </Card>
 

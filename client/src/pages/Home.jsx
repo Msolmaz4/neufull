@@ -16,8 +16,8 @@ const Home = () => {
     taxonomy_id: "",
   });
 
-  const getProducts = () => {
-    //bunu karsiya gonderrirri
+  const getProducts = () => { 
+    //bunu karsiya gonderrirri azrica filter gondeririy altta
     const payload = {
       keyword: inputRef.current.keyword,
       min_price: inputRef.current.min_price,
@@ -53,7 +53,12 @@ const Home = () => {
       <Header />
       <div>
       <div className="grid">
-        <Filter />
+        <Filter 
+        //burada dikkat et yukarda pay;oad icindeki guncel druurmu gonderiyoruz
+        payload={inputRef.current}
+        getProducts={getProducts}
+        
+        />
         <Products 
         
         payload={inputRef.current}
