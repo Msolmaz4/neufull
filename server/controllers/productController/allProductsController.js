@@ -10,6 +10,7 @@ try {
    // azrica page gondeririy sazga gexciclerini ayarlamak  icin limittten sonra skip 
    //komutu ile zapili page-1 carp limit
    //filteleme zapmak icin 
+   //bunu on  tarafta paylodadan gonderecegiz
    const { keyword , taxonomy_id,min_price,max_price,page} = req.body
    //gelip gelmedigini g;rmek icin once bir debneme
    //console.log(keyword)

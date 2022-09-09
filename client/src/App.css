@@ -109,3 +109,16 @@ justify-content: center;
   
 
 }
+.cart{
+height: 700px;
+width: 200px;
+display: flex;
+float: left;
+margin: 7px;
+
+
+}
+.hart{
+  width: 70x;
+  height: 70px;
+}

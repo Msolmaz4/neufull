@@ -11,7 +11,7 @@ import Home from './pages/Home'
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Profile from "./pages/Profile";
-import Cart from "./pages/Cart";
+import Cart from "./components/Cart";
 import Privat from "./routes/Privat";
 import Public from "./routes/Public";
 import { UserProvider } from "./context/UserContext";
@@ -33,7 +33,9 @@ import { UserProvider } from "./context/UserContext";
 function App() {
   return (
 
-  
+   
+
+    
     <Router>
       <UserProvider>
      
@@ -56,7 +58,7 @@ function App() {
    </Routes>
    </UserProvider>
     </Router>
-   
+  
   );
 }
 
