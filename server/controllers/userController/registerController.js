@@ -24,7 +24,7 @@ const registerController = async (req,res)=>{
         })
         newUser.save()
         .then(()=>res.status(200).send('succes'))
-        .catch((err)=>res.send('save falsv'))
+        .catch(()=>res.send('save falsv'))
         
     } catch (error) {
         console.log(error.message)

@@ -1,5 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card';
+import { truncate } from "lodash";
 
 const Cart = ({data,page}) => {
   
@@ -14,7 +15,8 @@ const Cart = ({data,page}) => {
         <Card.Title>{data.title}</Card.Title>
         <Card.Subtitle className="mb-2 text-muted"></Card.Subtitle>
         <Card.Text>
-        {data.description}
+        
+        {truncate(data.description, {length: 60})}
         </Card.Text>
         <Card.Link>Buy</Card.Link>
         <Card.Text>{data.price}$</Card.Text>

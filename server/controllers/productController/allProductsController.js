@@ -17,6 +17,18 @@ try {
    //burada bizim bir find ta filtre zapacaksacak obje olmali
    //burada RegExp kullandik
    //once bir obje zapalim
+
+   /**
+    * 1
+db.sonuclar.find({"puan" : {$gt: 70} });
+ile “Greater Than” yani 70’den büyük diyerek 70’den yüksek puan almışlara eriştim.
+
+1
+db.sonuclar.find({"puan" : {$lt: 50} });
+ile de “Less Than” yani 50’den küçük diyerek 50’den az puan almışlara eriştim.
+    * 
+    * 
+    */
    
    let query = {}
    keyword ? query.title = new RegExp(keyword,'i') : null
